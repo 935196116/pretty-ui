@@ -4,7 +4,7 @@
     :style="`min-height:${this.minHeight};max-height:${this.maxHeight}`" 
     :placeholder="placeholder" class="pui-textarea-input" :class="value?'pui-placeholder_hide':''" @input="input" ref="puiTextArea" @focus="focus=true" @blur="blur">
     </div>
-    <div class="pui-textarea-counter" :style="value.length==maxLength?'color:red':''">{{value.length}}/{{maxLength}}</div>
+    <div v-if="!(counter===false)" class="pui-textarea-counter" :style="value.length==maxLength?'color:red':''">{{value.length}}/{{maxLength}}</div>
 </div>
 
 </template>
