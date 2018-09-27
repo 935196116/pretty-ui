@@ -20,5 +20,5 @@ export default new Router({
 			path: '*',
 			component: notFound,
 		}],
-	mode: 'history'
+	// mode: 'history'
 })
