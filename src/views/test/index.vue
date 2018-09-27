@@ -3,6 +3,7 @@
         <pui-button bgcolor="disabled">取消</pui-button>
         <pui-button bgcolor="success" :loading="isLoading" :disabled="isLoading" @click="test">确定</pui-button>
         <pui-textarea counter style="width:200px" :length-callback="show" max-length="100" min-height="50px" max-height="100px" placeholder="请输入..." v-model="value"></pui-textarea>
+
     </div>
 </template>
 <script>
@@ -10,6 +11,7 @@ import Vue from "vue";
 import Button from "@/components/button";
 import Textarea from "@/components/textarea";
 import Frame from '@/components/frame'
+
 
 Vue.component(Frame.name,Frame);
 Vue.component(Button.name, Button);
