@@ -10,7 +10,6 @@
 .pui-frame {
   background-color: #fff;
   padding-top: 0.1px;
-  color: #666;
   position: relative;
   .pui-frame-title {
     background-color: #fff;
