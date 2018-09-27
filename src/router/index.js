@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import test from '@/views/test'
+import button from '@/views/button'
 import notFound from '@/views/notFound'
 import home from '@/views/home'
 
@@ -13,8 +13,8 @@ export default new Router({
 			component:home
 		},
 		{
-			path: '/test',
-			component: test
+			path: '/button',
+			component: button
 		},
 		{
 			path: '*',
