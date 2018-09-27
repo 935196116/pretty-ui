@@ -41,7 +41,6 @@ export default {
   },
   data() {
     return {
-      focus: false
     };
   },
   methods: {}

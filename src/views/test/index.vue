@@ -7,9 +7,11 @@
 </template>
 <script>
 import Vue from "vue";
-import Button from "@/pretty-ui/components/button";
-import Textarea from "@/pretty-ui/components/textarea";
+import Button from "@/components/button";
+import Textarea from "@/components/textarea";
+import Frame from '@/components/frame'
 
+Vue.component(Frame.name,Frame);
 Vue.component(Button.name, Button);
 Vue.component(Textarea.name, Textarea);
 export default {
