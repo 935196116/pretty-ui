@@ -1,7 +1,7 @@
 <template>
-<div class="pui-textarea">
+<div class="pui-textarea" :style="`border-color:${this.focus?'#57a3f3':''}`">
     <div contenteditable="true" 
-    :style="`min-height:${this.minHeight};max-height:${this.maxHeight}`" 
+    :style="`min-height:${this.minHeight};max-height:${this.maxHeight};`" 
     :placeholder="placeholder" class="pui-textarea-input" :class="value?'pui-placeholder_hide':''" @input="input" ref="puiTextArea" @focus="focus=true" @blur="blur">
     </div>
     <div v-if="!(counter===false)" class="pui-textarea-counter" :style="value.length==maxLength?'color:red':''">{{value.length}}/{{maxLength}}</div>
@@ -23,6 +23,7 @@
 .pui-textarea-input:before {
   content: attr(placeholder);
   color: #aaa;
+  font-size: 15px;
 }
 
 .pui-placeholder_hide::before {
@@ -53,8 +54,8 @@ export default {
     },
     minHeight: {},
     maxHeight: {},
-    lengthCallback:{
-        default:function(){}
+    lengthCallback: {
+      default: function() {}
     }
   },
   data() {
@@ -70,7 +71,7 @@ export default {
       ) {
         this.$emit("input", e.target.innerText);
       } else {
-          this.lengthCallback();
+        this.lengthCallback();
         e.target.innerText = e.target.innerText.substr(
           0,
           parseInt(this.maxLength)

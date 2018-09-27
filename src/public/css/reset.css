@@ -1,0 +1,99 @@
+.aliIcon {
+    width:20px;
+    height:20px;
+    vertical-align: middle;
+}
+*{
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+.flex {
+  flex: 1;
+}
+
+.red{
+  color:#af0203;
+}
+
+.flexd{
+  display: flex;
+  align-items: center;
+}
+
+img, div, body, html, ul, li, a {
+  -webkit-touch-callout: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  border: none;
+  vertical-align: middle;
+}
+
+input, select {
+  vertical-align: middle;
+  outline: none;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-nowrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-twowrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+  zoom: 1;
+}
+
+button,
+input,
+select,
+textarea{
+  border:none;
+  outline:none;
+}
+
+a{
+  text-decoration:none;
+}
+
+fieldset,
+img{
+  border:0;
+}
+
+
