@@ -7,29 +7,32 @@ import datepick from '@/views/datepick';
 
 import home from '@/views/home'
 
-Vue.use(Router)
+Vue.use(Router);
 
-export default new Router({
-	routes: [
-		{
-			path:'/',
-			component:home
-		},
-		{
-			path: '/button',
-			component: button
-		},
+//有label字段的将会在home中渲染
+export const routes = [
+    {
+      path:'/',
+      component:home
+    },
+    {
+      path: '/button',
+      component: button,
+      label:"按钮"
+    },
     {
       path:'/modal',
-      component: Modal
+      component: Modal,
+      label:"弹窗组件"
     },
     {
       path:'/datepicker',
-      component: datepick
+      component: datepick,
+      label:"日期选择组件"
     },
-		{
-			path: '*',
-			component: notFound,
-		},],
-	// mode: 'history'
-})
+    {
+      path: '*',
+      component: notFound,
+    }];
+
+export default new Router({routes})

@@ -6,7 +6,9 @@ import App from './App';
 import router from './router';
 import 'vue-ydui/dist/ydui.base.css';
 import { Confirm, Alert, Toast, Notify, Loading } from 'vue-ydui/dist/lib.rem/dialog';
+import * as vClickOutside from 'v-click-outside-x';
 
+Vue.use(vClickOutside);
 Vue.prototype.$dialog = {
     confirm: Confirm,
     alert: Alert,

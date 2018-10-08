@@ -1,5 +1,5 @@
 <template>
-  <DatePicker></DatePicker>
+  <DatePicker :confirm="true"></DatePicker>
 </template>
 
 <script>
