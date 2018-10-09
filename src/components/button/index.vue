@@ -57,6 +57,9 @@ export default {
     },
     disabled: {
       default: false
+    },
+    shadow: {
+      default: false
     }
   },
   data() {
@@ -93,7 +96,7 @@ export default {
       };border-radius:${this.setBorderRadius()};
       height:${this.height};cursor:${
         !(this.disabled === false) ? "not-allowed" : "pointer"
-      }`;
+      };${this.shadow===false?"":"box-shadow:1px 1px 6px 1px rgba(0,0,0,0.2)"}`;
     }
   }
 };

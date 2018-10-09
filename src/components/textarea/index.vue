@@ -1,8 +1,8 @@
 <template>
-<div class="pui-textarea" :style="`border-color:${this.focus?'#57a3f3':''}`">
+<div class="pui-textarea" :style="`border-color:${this.focus?'#a0ccfb':''}`">
     <div contenteditable="true" 
     :style="`min-height:${this.minHeight};max-height:${this.maxHeight};`" 
-    :placeholder="placeholder" class="pui-textarea-input" :class="value?'pui-placeholder_hide':''" @input="input" ref="puiTextArea" @focus="focus=true" @blur="blur">
+    :placeholder="placeholder" class="pui-textarea-input" ref="puiTextareaInput" :class="value?'pui-placeholder_hide':''" @input="input" @focus="focus=true" @blur="blur">
     </div>
     <div v-if="!(counter===false)" class="pui-textarea-counter" :style="value.length==maxLength?'color:red':''">{{value.length}}/{{maxLength}}</div>
 </div>
@@ -14,11 +14,12 @@
   border-radius: 4px;
   padding: 4px 6px;
   font-size: 15px;
-  color: #333;
   position: relative;
+  width: 100%;
 }
 .pui-textarea-input {
   overflow: auto;
+  white-space: pre;
 }
 .pui-textarea-input:before {
   content: attr(placeholder);
@@ -52,16 +53,21 @@ export default {
     counter: {
       default: false
     },
-    minHeight: {},
-    maxHeight: {},
-    lengthCallback: {
-      default: function() {}
+    minHeight: {
+      default:"unset"
+    },
+    maxHeight: {
+      default:"unset"
     }
   },
   data() {
     return {
       focus: false
     };
+  },
+  mounted() {
+    let el = this.$refs.puiTextareaInput;
+    el.innerText = this.value;
   },
   methods: {
     input(e) {
@@ -71,23 +77,20 @@ export default {
       ) {
         this.$emit("input", e.target.innerText);
       } else {
-        this.lengthCallback();
-        e.target.innerText = e.target.innerText.substr(
-          0,
-          parseInt(this.maxLength)
-        );
+        this.$emit("lengthCallback",e.target.innerText);
+        e.target.innerText = this.value;
       }
     },
     blur() {
       this.focus = false;
-      let el = document.getElementsByClassName("pui-textarea-input")[0];
+      let el = this.$refs.puiTextareaInput;
       el.innerText = this.value;
     }
   },
   watch: {
     value() {
       if (!this.focus) {
-        let el = document.getElementsByClassName("pui-textarea-input")[0];
+        let el = this.$refs.puiTextareaInput;
         el.innerText = this.value;
       }
       //   if (window.getSelection) {
@@ -112,7 +115,6 @@ export default {
       //       }
       //     }
       //   }
-      console.log("last:", this.value);
     }
   }
 };

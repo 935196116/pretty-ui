@@ -61,7 +61,7 @@
   Vue.component(Modal.name,Modal);
   Vue.component(Button.name, Button);
   export default {
-    name: "modal-test",
+    name: "pui-Modal",
     data() {
       return {
         isVisible1: false,

@@ -6,7 +6,10 @@ export default {
     name:"home",
     data(){
         return{
-
+            showContent:false
         }
-    }
+    },
+    mounted() {
+
+    },
 }
